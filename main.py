@@ -38,3 +38,24 @@ def knapsack_brute_force(items, capacity):
                 best_combination = combination
 
     return best_value, best_combination
+
+print(knapsack_brute_force(items, capacity))
+# Result: (270, ({'weight': 10, 'value': 60}, {'weight': 20, 'value': 100}, {'weight': 5, 'value': 30}, {'weight': 15, 'value': 80}))
+# Highest value was 270
+
+def knapsack_greedy_function(items, capacity):
+    items_sorted = sorted(items, key=lambda x: x["value"] / x["weight"], reverse=True)
+    total_value = 0
+    total_weight = 0
+    chosen_items = []
+
+    for item in items_sorted:
+        if total_weight + item["weight"] <= capacity:
+            chosen_items.append(item)
+            total_weight += item["weight"]
+            total_value += item["value"]
+
+    return total_value, chosen_items, total_weight
+
+print(knapsack_brute_force(items, capacity))
+print(knapsack_greedy_function(items, capacity))
