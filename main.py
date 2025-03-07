@@ -85,7 +85,17 @@ def knapsack_dynamic_function(items, capacity):
     total_value = dp[n][capacity]
     return total_value, chosen_items
 
-
+start = time.perf_counter()
 print(knapsack_brute_force(items, capacity))
+end = time.perf_counter()
+print(end-start)
+
+start = time.perf_counter()
 print(knapsack_greedy_function(items, capacity))
+end = time.perf_counter()
+print(end-start)
+
+start = time.perf_counter()
 print(knapsack_dynamic_function(items, capacity))
+end = time.perf_counter()
+print(end-start)
