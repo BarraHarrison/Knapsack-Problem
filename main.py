@@ -99,3 +99,7 @@ start = time.perf_counter()
 print(knapsack_dynamic_function(items, capacity))
 end = time.perf_counter()
 print(end-start)
+
+# Brute_Force_Function: 0.019240875
+# Greedy_Function: 1.454200000000280
+# Dynamic Function: 0.00024354199999999937
